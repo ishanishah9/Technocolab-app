@@ -12,10 +12,10 @@ import numpy as np
 
 
 import pickle
-Encoder = open('/Users/ishanishah/Documents/Technocolab Software/Project/Web app/Country_encoder.pkl','rb')
+Encoder = open('Country_encoder.pkl','rb')
 enc = pickle.load(Encoder)
 
-model=open('/Users/ishanishah/Documents/Technocolab Software/Project/Web app/LR.pkl','rb')
+model=open('LR.pkl','rb')
 lr=pickle.load(model)
 
 st.header('Fill the Detail to know the Foreign Exchange Rate')
