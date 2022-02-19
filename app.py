@@ -15,8 +15,14 @@ import pickle
 Encoder = open('Country_encoder.pkl','rb')
 enc = pickle.load(Encoder)
 
-model=open('LR.pkl','rb')
+model=open('LR_VIF.pkl','rb')
 lr=pickle.load(model)
+
+global weights
+
+weights=pd.read_csv('Article_weight-2.csv')
+ 
+
 
 st.header('Fill the Detail to know the Foreign Exchange Rate')
 
@@ -30,23 +36,38 @@ Country = st.radio("Is the property New? ", ('USA', 'CHINA', 'INDIA', 'JAPAN', '
 
 
 st.markdown("#### GDP")
-gdp=st.number_input('Enter in the GDP',format="%.5f")
+gdp=st.number_input('Enter in the GDP',format="%.3f")
 
 st.markdown("#### Enter PPP ")
-ppp=st.number_input('Enter PPP',format="%.5f")
+ppp=st.number_input('Enter PPP',format="%.3f")
+
+st.markdown("#### Enter Export ")
+Export=st.number_input('Enter Export',format="%.3f")
 
 st.markdown("#### INVL")
-invl=st.number_input('Enter in the INVL',format="%.5f")
+invl=st.number_input('Enter in the INVL',format="%.3f")
+
+
 
 st.markdown("#### Enter Invest ")
-invest=st.number_input('Enter Invest',format="%.5f")
+invest=st.number_input('Enter Invest',format="%.3f")
+
+st.markdown("#### Enter Import ")
+Import=st.number_input('Enter Import',format="%.3f")
+
+for i in range(len(weights)):
+    if weights['Years'][i]==year:
+        Topic_1=round(weights['Topic-1'][i],3)
+        Topic_2=round(weights['Topic-2'][i],3)
+        Topic_3=round(weights['Topic-3'][i],3)
 
 
-
-gdp=np.sqrt(gdp)
-ppp=np.sqrt(ppp)
-invl=np.sqrt(invl)
-invest=np.sqrt(invest)
+gdp=round(np.sqrt(gdp),3)
+ppp=round(np.sqrt(ppp),3)
+Export=round(np.sqrt(Export),3)
+invl=round(np.sqrt(invl),3)
+Import=round(np.sqrt(Import),3)
+invest=round(np.sqrt(invest),3)
 
 Country_ecn=enc.transform([Country])[0]
 
@@ -54,14 +75,13 @@ Country_ecn=enc.transform([Country])[0]
 button=st.button('Predict')
 
 
+
+
 if button:
         
-    predict_1={'PPP':[],'GDP':[],'INVL':[],'Invest':[],'Country':[]}
+    predict_1={'PPP':[],'GDP':[],'Export':[],'INVL':[],'Invest':[],'Import':[],'Topic-1':[],'Topic-2':[],'Topic-3':[],'Country':[]}
     Pred_data=pd.DataFrame(predict_1)
-    
-    Pred_data=Pred_data.append({'PPP':ppp,'GDP':gdp,'INVL':invl,'Invest':invest,'Country':Country_ecn},ignore_index=True)
-    
-    
+    Pred_data=Pred_data.append({'PPP':ppp,'GDP':gdp,'Export':Export,'INVL':invl,'Invest':invest,'Import':Import,'Topic-1':Topic_1,'Topic-2':Topic_2,'Topic-3':Topic_3,'Country':Country_ecn},ignore_index=True)
     fer=lr.predict(Pred_data)
     string='The Foreign Exchange is '
     a=str(fer[0])
