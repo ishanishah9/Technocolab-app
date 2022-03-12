@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 
 
+import streamlit.components.v1 as components
 
 import pickle
 Encoder = open('Country_encoder.pkl','rb')
