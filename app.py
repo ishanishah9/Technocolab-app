@@ -89,8 +89,7 @@ if button:
     string='The Foreign Exchange is '
     a=str(fer[0])
     st.write(string+ a[1:6])
-    oo = "<marquee>{string+ a[1:6}]</marquee>"
-    st.markdown(oo, unsafe_allow_html=True)
+
     
     
     
