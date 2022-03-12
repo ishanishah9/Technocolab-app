@@ -25,8 +25,8 @@ weights=pd.read_csv('Article_weight-2.csv')
  
 
 st.header('Predicting The Foreign Exchange Rate')
-
-html_string = "<marquee>Fill the Detail to know the Foreign Exchange Rate</marquee>"
+a='amit'
+html_string = f"<marquee>{a}</marquee>"
 st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("#### Select a year")
