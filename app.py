@@ -88,7 +88,8 @@ if button:
     string='The Foreign Exchange is '
     a=str(fer[0])
     final=string+ a[1:6]
-    html_string = f"<marquee>{final}</marquee>"
+    trix = f"<marquee>{final}</marquee>"
+    st.markdown(trix, unsafe_allow_html=True)
 
 
     
