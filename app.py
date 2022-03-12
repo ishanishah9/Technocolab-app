@@ -30,7 +30,7 @@ html_string = "<marquee>Fill the Detail to know the Foreign Exchange Rate</marqu
 st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("#### Select a year")
-year = st.radio('Select Location',(2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
+year = st.radio('Select year',(2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
        2017, 2018, 2019))
 
 st.markdown("#### Enter the Country")
