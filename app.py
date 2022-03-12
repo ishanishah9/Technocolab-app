@@ -24,9 +24,9 @@ global weights
 weights=pd.read_csv('Article_weight-2.csv')
  
 
-st.header('Fill the Detail to know the Foreign Exchange Rate')
+st.header('Predicting The Foreign Exchange Rate')
 
-html_string = "<marquee>Predicting The Foreign Exchange Rate</marquee>"
+html_string = "<marquee>Fill the Detail to know the Foreign Exchange Rate</marquee>"
 st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("#### Select a year")
