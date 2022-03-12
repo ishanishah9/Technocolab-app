@@ -85,7 +85,7 @@ if button:
     Pred_data=pd.DataFrame(predict_1)
     Pred_data=Pred_data.append({'PPP':ppp,'GDP':gdp,'Export':Export,'INVL':invl,'Invest':invest,'Import':Import,'Topic-1':Topic_1,'Topic-2':Topic_2,'Topic-3':Topic_3,'Country':Country_ecn},ignore_index=True)
     fer=lr.predict(Pred_data)
-    string='The Foreign Exchange is '
+    string='The Foreign Exchange Rate is'
     a=str(fer[0])
     final=string+ a[1:6]
     trix = f"<marquee>{final}</marquee>"
