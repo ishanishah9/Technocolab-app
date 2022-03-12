@@ -25,8 +25,7 @@ weights=pd.read_csv('Article_weight-2.csv')
  
 
 st.header('Predicting The Foreign Exchange Rate')
-a='amit'
-html_string = f"<marquee>{a}</marquee>"
+html_string = "<marquee>Fill the Details to know the Foreign Exchange Rate</marquee>"
 st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("#### Select a year")
@@ -88,7 +87,9 @@ if button:
     fer=lr.predict(Pred_data)
     string='The Foreign Exchange is '
     a=str(fer[0])
-    st.write(string+ a[1:6])
+    final=string+ a[1:6]
+    html_string = f"<marquee>{final}</marquee>"
+
 
     
     
