@@ -23,13 +23,9 @@ global weights
 
 weights=pd.read_csv('Article_weight-2.csv')
  
-components.html(
-<marquee>
-This is a sample scrolling text that has scrolls texts to down.
-</marquee>    
+html_string = "<marquee>Predicting The Foreign Exchange Rate</marquee>"
 
-)
-
+st.markdown(html_string, unsafe_allow_html=True)
 st.header('Fill the Detail to know the Foreign Exchange Rate')
 
 st.markdown("#### Select a year")
