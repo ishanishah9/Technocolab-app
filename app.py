@@ -34,7 +34,7 @@ year = st.radio('Select year',(2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2
        2017, 2018, 2019))
 
 st.markdown("#### Enter the Country")
-Country = st.radio("Is the property New? ", ('USA', 'CHINA', 'INDIA', 'JAPAN', 'SWITZERLAND', 'CANADA',
+Country = st.radio("Select the Country ", ('USA', 'CHINA', 'INDIA', 'JAPAN', 'SWITZERLAND', 'CANADA',
        'AUSTRALIA', 'BRAZIL', 'UK'))
 
 
