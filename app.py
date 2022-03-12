@@ -23,10 +23,11 @@ global weights
 
 weights=pd.read_csv('Article_weight-2.csv')
  
-html_string = "<marquee>Predicting The Foreign Exchange Rate</marquee>"
 
-st.markdown(html_string, unsafe_allow_html=True)
 st.header('Fill the Detail to know the Foreign Exchange Rate')
+
+html_string = "<marquee>Predicting The Foreign Exchange Rate</marquee>"
+st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("#### Select a year")
 year = st.selectbox('Select Location',(2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
